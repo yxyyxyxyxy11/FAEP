@@ -4,7 +4,7 @@ SET(CMAKE_BUILD_TYPE Release) # Release, RelWithDebInfo
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(ENABLE_CUDA true)
-
+set(CUDA_NVCC_FLAGS -gencode arch=compute_86,code=sm_86;)
 if(ENABLE_CUDA)
   find_package(CUDA REQUIRED)
   SET(CUDA_NVCC_FLAGS ${CUDA_NVCC_FLAGS};-O3 -use_fast_math)
